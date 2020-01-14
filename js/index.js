@@ -4,8 +4,12 @@ navItems.forEach(item => {
         event.preventDefault();
         event.stopPropagation();
         item.style.border = '4px dashed yellow';
-    })
-})
+        gsap.to(item, {
+            rotate: 360,
+            duration: 2
+        });
+    });
+});
 
 const header = document.querySelector('.main-navigation');
 header.addEventListener('click', () => {
