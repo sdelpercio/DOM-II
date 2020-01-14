@@ -1,3 +1,12 @@
+const navItems = document.querySelectorAll('.nav-link');
+navItems.forEach(item => {
+    item.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        item.style.border = '4px dashed yellow';
+    })
+})
+
 const header = document.querySelector('.main-navigation');
 header.addEventListener('click', () => {
     header.style.backgroundColor = 'magenta';
@@ -12,7 +21,7 @@ bus.addEventListener('mouseenter', () => {
     vroomVroom.textContent = '💨';
     vroomVroom.style.position = 'absolute';
     vroomVroom.style.top = '20%';
-    vroomVroom.style.left = '30%';
+    vroomVroom.style.left = '35%';
     vroomVroom.style.transform = 'rotate(180deg)';
     introHeader.appendChild(vroomVroom);
 });
@@ -46,8 +55,18 @@ mapImg.addEventListener('drag', () => {
 });
 
 const boatImg = document.querySelector('.inverse-content .img-content img');
-boatImg.addEventListener('dragover', () => {
-    boatImg.style.transition = 'scale(0.2)';
+boatImg.addEventListener('load', () => {
+    boatImg.style.transform = 'scale(0.2)';
+});
+
+const buttonOne = document.querySelector('.btn');
+buttonOne.addEventListener('mousemove', () => {
+    buttonOne.style.backgroundColor = 'black';
+});
+
+const buttonThree = document.querySelector('.destination:nth-child(3) .btn');
+buttonThree.addEventListener('mouseup', () => {
+    buttonThree.style.color = 'green';
 });
 
 
